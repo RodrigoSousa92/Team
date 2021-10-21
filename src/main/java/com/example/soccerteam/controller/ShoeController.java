@@ -1,50 +1,55 @@
 package com.example.soccerteam.controller;
 
-import com.example.soccerteam.model.Player;
-import com.example.soccerteam.request.PlayerCreationRQ;
-import com.example.soccerteam.request.UpdatePlayerNameRQ;
-import com.example.soccerteam.service.PlayerService;
+import com.example.soccerteam.model.Shoe;
+import com.example.soccerteam.request.ShoeCreationRQ;
+import com.example.soccerteam.request.UpdateShoeBrandRQ;
+import com.example.soccerteam.service.ShoeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.net.URI;
 import java.util.List;
 
+@RestController
+@RequestMapping("/api")
+@Validated
 public class ShoeController {
-
 
     @Autowired
     ShoeService shoeService;
 
     //Get all shoes
     @GetMapping("/Shoes")
-    public List<Player> getPlayers() {
+    public List<Shoe> getShoes() {
         return shoeService.findAll();
     }
 
     //Get shoe by id
     @GetMapping("/Shoes/{id}")
-    public Player getPlayerById(@PathVariable Long id) {
-        return playerService.getPlayersById(id);
+    public Shoe getShoesById(@PathVariable Long id) {
+        return shoeService.getShoesById(id);
     }
-
 
     //Create shoe
     @PostMapping(value = "/Shoes")
-    public List<Player> createPlayers(@RequestBody @Valid List<PlayerCreationRQ> createPlayerRQ) {
-        return playerService.createPlayers(createPlayerRQ);
+    public List<Shoe> createShoes(@RequestBody @Valid List<ShoeCreationRQ> shoeCreationRQS) {
+        return shoeService.createShoes(shoeCreationRQS);
     }
 
     //Update shoe
     @PutMapping(value = "/Shoe-update/{id}")
-    public Player updatePlayerName(@PathVariable(value = "id") Long id, @RequestBody UpdatePlayerNameRQ updatePlayerNameRQ) {
-        return shoeService.updateShoe(id,updatePlayerNameRQ.getName());
+    public Shoe updateShoeName(@PathVariable(value = "id") Long id, @RequestBody UpdateShoeBrandRQ updateShoeBrandRQ) {
+        return shoeService.updateShoe(id, updateShoeBrandRQ.getBrand());
     }
 
-    //Delete player
-    @DeleteMapping(value = "/Player-delete/{id}")
-    public void deleteById(@PathVariable(value = "id") Long id) {
-        playerService.deleteById(id);
+    //Delete shoe
+    @DeleteMapping(path = "/delete-shoe/{id}")
+    public ResponseEntity deleteShoe(@PathVariable(value = "id") Long shoeId) {
+        shoeService.deleteById(shoeId);
+        return ResponseEntity.created(URI.create("/shoe")).body("shoe removed");
     }
 
 }

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -35,14 +34,14 @@ public class PlayerController {
 
     //Create player
     @PostMapping(value = "/Players")
-        public List<Player> createPlayers(@RequestBody @Valid List<PlayerCreationRQ> createPlayerRQ) {
+    public List<Player> createPlayers(@RequestBody @Valid List<PlayerCreationRQ> createPlayerRQ) {
         return playerService.createPlayers(createPlayerRQ);
     }
 
     //Update player
     @PutMapping(value = "/Player-update/{id}")
     public Player updatePlayerName(@PathVariable(value = "id") Long id, @RequestBody UpdatePlayerNameRQ updatePlayerNameRQ) {
-        return playerService.updatePlayer(id,updatePlayerNameRQ.getName());
+        return playerService.updatePlayer(id, updatePlayerNameRQ.getName());
     }
 
     //Delete player

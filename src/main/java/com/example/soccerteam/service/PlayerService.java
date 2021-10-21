@@ -31,14 +31,14 @@ public class PlayerService {
 
     //Create new player (List)
     public List<Player> createPlayers(List<PlayerCreationRQ> playerCreationRQList) {
-        List<Player> newMemberList = new ArrayList<>();
+        List<Player> newPlayerList = new ArrayList<>();
         Player newPlayer;
         for (PlayerCreationRQ playerCreationRQ : playerCreationRQList) {
             newPlayer = Player.builder().name(playerCreationRQ.getName()).build();
             playerRepository.save(newPlayer);
-            newMemberList.add(newPlayer);
+            newPlayerList.add(newPlayer);
         }
-        return newMemberList;
+        return newPlayerList;
     }
 
     //Update player's by name

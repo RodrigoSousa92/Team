@@ -4,9 +4,7 @@ import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.List;
 
 @Getter
 @Setter
@@ -22,7 +20,7 @@ public class Team {
 
     private Long id;
 
-    private String team;
+    private String name;
 
   /*  @OneToMany(mappedBy = "team")
     private List<Player> player;*/

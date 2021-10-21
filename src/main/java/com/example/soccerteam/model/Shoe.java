@@ -22,9 +22,6 @@ public class Shoe {
 
     private String brand;
 
-
-
-
     @ManyToMany
     @JoinTable(
             name = "players_shoes",

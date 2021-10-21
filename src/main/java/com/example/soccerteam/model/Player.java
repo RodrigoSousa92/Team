@@ -24,10 +24,8 @@ public class Player {
     @NotBlank(message = "Name is mandatory")
     private String name;
 
-
     @ManyToMany(mappedBy = "playerShoes")
     private Set<Shoe> shoes = new HashSet<>();
-
 
 }
 

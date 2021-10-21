@@ -8,8 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UpdatePlayerNameRQ {
-
+public class UpdateTeamNameRQ {
     private String name;
-
 }
