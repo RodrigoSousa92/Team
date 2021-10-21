@@ -7,32 +7,32 @@ Also we created many to many relationship between shoes and players, and many to
 This API consists of 3 models which corresponds to our 3 classes:
 
 ### *Models*:
-*Player
-*Shoe
-*Team
+* Player
+* Shoe
+* Team
 This API has 3 repositories, that extend the MongoDB repository apllied for our 3 main classes.
 
 ### *Repositories*
-*PlayerRepository
-*ShoeRepository
-*TeamRepository
+* PlayerRepository
+* ShoeRepository
+* TeamRepository
 
 ### Similarly, this API has 3 services and 3 controllers Several endpoints exist, to perform basic CRUD operations.
-*PlayerService
-*ShoeService
-*TeamService
+* PlayerService
+* ShoeService
+* TeamService
 
 ### *Controllers:*
-*Player Controller 
-*Shoe Controller
-*TeamController
+* Player Controller 
+* Shoe Controller
+* TeamController
 
 ### *Endpoints:*
-*Get: all shoes
-*Get: get shoe by ID
+* Get: all shoes
+* Get: get shoe by ID
 
 ### *Put:*
-*update a shoes by its Brand
+* update a shoes by its Brand
 
 ### *Exceptions:*
-*Player Not Found
+* Player Not Found
