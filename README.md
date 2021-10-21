@@ -6,13 +6,13 @@ Each player has as an attribute of the name and shoes has own brand itself, all 
 Also we created many to many relationship between shoes and players, and many to one relationship with players and teams to know for which team belongs each player.
 This API consists of 3 models which corresponds to our 3 classes:
 
-###*Models*:
+*Models*:
 * Player
 * Shoe
 * Team
 This API has 3 repositories, that extend the MongoDB repository apllied for our 3 main classes.
 
-###*Repositories*
+*Repositories*
 * PlayerRepository
 * ShoeRepository
 * TeamRepository
@@ -21,14 +21,18 @@ Similarly, this API has 3 services and 3 controllers Several endpoints exist, to
 * PlayerService
 * ShoeService
 * TeamService
-###*Controllers:*
+
+*Controllers:*
 * Player Controller 
 * Shoe Controller
 * TeamController
-###*Endpoints:*
+
+*Endpoints:*
 * Get: all shoes
 * Get: get shoe by ID
-###*Put:*
+
+*Put:*
 * update a shoes by its Brand
-###*Exceptions:*
+
+*Exceptions:*
 * Player Not Found
