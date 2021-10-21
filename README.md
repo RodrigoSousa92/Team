@@ -1,4 +1,5 @@
 # Small API for a team job which suppose to be done within 3 hours
+#### *with a specific requsits of our menthor*
 ## Name of the project: Team
 
 This API aims to know which shoe belongs to a certain player of each team, and to which team belongs each player, were the entities are: players, shoes, teams.
